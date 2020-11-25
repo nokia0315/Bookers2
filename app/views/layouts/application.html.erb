@@ -10,6 +10,7 @@
   </head>
 
   <body>
+
     <% if user_signed_in? %>
 
       <li>
@@ -35,6 +36,10 @@
       <li>
         <%= link_to "ログイン", new_user_session_path %>
       </li>
+    <% end %>
+
+    <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     <%= yield %>
   </body>
