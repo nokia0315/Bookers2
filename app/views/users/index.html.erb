@@ -1,7 +1,5 @@
-
-
-
-<h1>Books</h1>
+<%= render 'users/list', user: @user, book:@book %>
+  <h1>Books</h1>
 <%= form_with model: @book, local:true do |f| %>
 
   <h4>Title</h4>
@@ -11,13 +9,12 @@
   <%= f.submit '投稿' %>
 <% end %>
 
-
 <h2>Users</h2>
 <% @users.each do |user| %>
 <div>
 
   <p>Name：<%= user.name %></p>
-  <p><%= link_to 'Show', user_path(@user.id) %></p>
+  <p><%= link_to 'Show', user_path(user.id) %></p>
 
   </div>
 <% end %>
