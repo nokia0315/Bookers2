@@ -1,5 +1,10 @@
-
-<%= render 'users/list', user: @user, book:@book %>
+<% if @book.errors.any? %>
+  <h2><%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:</h2>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+<%= render 'users/list', user: @user, book: @book %>
 
 
 <% @books.each do |book| %>

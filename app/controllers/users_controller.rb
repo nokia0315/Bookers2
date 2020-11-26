@@ -22,7 +22,7 @@ class UsersController < ApplicationController
      flash[:notice] = "Book was successfully created."
      redirect_to edit_book_path(@book)
     else
-     render 'books'
+     render :index
     end
   end
 

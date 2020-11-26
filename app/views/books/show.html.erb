@@ -6,6 +6,6 @@
   <p>Opinion：<%= @book.body %></p>
 <% if @book.user == current_user %>
     <%= link_to "編集", edit_book_path(@book) %>
-    <%= link_to "削除", book_path(@book), method: :delete %>
+    <%= link_to "削除", book_path(@book), method: :delete, "data-confirm" => "Are you sure？" %>
   <% end %>
 </div>
