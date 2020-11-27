@@ -3,10 +3,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = @user.books.all
     @book = Book.new
+
   end
 
   def edit
     @user = User.find(params[:id])
+    if @user.id == current_user.id
+      render "edit"
+    else
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def index
