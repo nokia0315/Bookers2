@@ -6,6 +6,15 @@ class UsersController < ApplicationController
 
   end
 
+  def follows
+    @user = User.find(params[:id])
+
+  end
+
+  def followers
+    @user = User.find(params[:id])
+  end
+
   def edit
     @user = User.find(params[:id])
     if @user.id == current_user.id
