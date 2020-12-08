@@ -63,4 +63,10 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body)
   end
 
+  def book_comment_params
+    params.require(:book_comment).permit(:comment)
+  end
+
+
+
 end
