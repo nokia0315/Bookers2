@@ -33,14 +33,13 @@
        </tr>
       </tbody>
      </table>
+
      <div id="book_comment_index">
          <%=render partial: 'books/comment', locals: { book: @book, book_comment: @book_comment} %>
      </div>
-     <%= form_with(model:[@book, @book_comment]) do |f| %>
-     <%= f.text_area :comment, rows:'5',placeholder: "Please comment here", class: 'col-md-10' %><br>
-     <%= f.submit "送信" %>
-     <% end %>
-     <%=render partial: 'books/post', locals: { book: @book, book_comment: @book_comment} %>
+     <div classs"book_comment_post">
+         <%=render partial: 'books/post', locals: { book: @book, book_comment: @book_comment} %>
+     </div>
     </div>
   </div>
 </div>
